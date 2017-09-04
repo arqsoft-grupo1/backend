@@ -1,0 +1,10 @@
+language: php
+php:
+  - '7.1'
+
+deploy:
+  provider: heroku
+  app: arq-soft-grupo1   # optional if it's the same as your repo name
+  api_key: 4a91bd54-ea92-4670-a6b0-55d13103afa3
+
+before_script: composer install
