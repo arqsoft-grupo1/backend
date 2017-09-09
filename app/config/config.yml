@@ -78,7 +78,18 @@ nelmio_cors:
         max_age: 3600
         hosts: []
         origin_regex: false
- 
+ # app/config/config.yml
+ # Configuracion de Swagger ruta/api/doc
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Preinscripcion
+            description: ""
+            version: 1.0.0
+    routes:
+        path_patterns: # an array of regexps
+            - ^/api
+
 # FOSRest Configuration
 fos_rest:
     body_listener: true

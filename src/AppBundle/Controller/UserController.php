@@ -15,7 +15,7 @@ use AppBundle\Entity\User;
 class UserController extends FOSRestController
 {
 	 /**
-     * @Rest\Get("/user")
+     * @Rest\Get("/api/user")
      */
     public function getAction()
     {
@@ -27,7 +27,7 @@ class UserController extends FOSRestController
     }
 
     /**
-	 * @Rest\Get("/user/{id}")
+	 * @Rest\Get("/api/user/{id}")
 	 */
 	 public function idAction($id)
 	 {
@@ -39,7 +39,7 @@ class UserController extends FOSRestController
 	 }
 
 	 /**
-	 * @Rest\Post("/user")
+	 * @Rest\Post("/api/user")
 	 */
 	 public function postAction(Request $request)
 	 {
@@ -61,7 +61,7 @@ class UserController extends FOSRestController
 	 }
 
 	 /**
-	 * @Rest\Put("/user/{id}")
+	 * @Rest\Put("/api/user/{id}")
 	 */
 	 public function updateAction($id,Request $request)
 	 {
