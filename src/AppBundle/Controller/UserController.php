@@ -7,23 +7,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use FOS\RestBundle\View\View;
 use AppBundle\Entity\User;
 
 
 class UserController extends FOSRestController
 {
-	 /**
+     /**
      * @Rest\Get("/api/user")
      */
     public function getAction()
     {
-      $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+        // $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+        $restresult = '[{"id":1,"name":"tony","role":"community manager"},{"id":2,"name":"sandy","role":"digital content producer"}]';
         if ($restresult === null) {
           return new View("there are no users exist", Response::HTTP_NOT_FOUND);
      }
-        return $restresult;
+        // return $restresult;
+        return new JsonResponse(json_decode($restresult));
     }
 
     /**
